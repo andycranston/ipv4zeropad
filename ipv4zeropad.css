@@ -1,0 +1,59 @@
+/*
+ *  @(!--#) @(#) compareconfigs.css, version 003, 12-june-2019
+ *
+ *  style sheet for the compareconfigs.py dynamic web page
+ *
+ */
+
+body {
+  background-color: white;
+  font-size: 100%;
+}
+
+h1 {
+  color: black;
+  margin-right: 25%;
+  border-style: solid;
+  border-color: black;
+  border-width: 4px;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: arial, verdana, sans-serif;
+  font-size: 2em;
+}
+
+p.instructions {
+  color: black;
+  font-family: arial, verdana, sans-serif;
+  font-size: 1em;
+}
+
+input[type=submit] {
+  text-align: center;
+  background-color: lightgray;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 1.2em;
+}
+  
+textarea.textareaone {
+  color: black;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 1em;
+}
+
+textarea.textareatwo {
+  color: gray;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 1em;
+}
+
+hr {
+  color: black;
+  margin-right: 25%;
+}
+
+/* end of file */
