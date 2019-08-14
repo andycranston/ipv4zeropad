@@ -13,7 +13,7 @@ sorted by IPv4 address.
 ## Background
 
 Sorting IPv4 addreses can be tricky.  For example sorting the following
-list of IP addresses:
+list of IP addresses in Excel:
 
 ```
 192.168.1.11
@@ -22,7 +22,7 @@ list of IP addresses:
 192.168.1.2
 ```
 
-in Excel will result in this:
+will result in this:
 
 ```
 192.168.1.100
@@ -31,9 +31,11 @@ in Excel will result in this:
 192.168.1.213
 ```
 
-Many similar applications will do the same.
+which is probably not what you want.
 
-Why is this?  Well it is because the application is treating the IPv4
+Many applications similar to Excel will do the same.
+
+Why is this?  Well it is because Excel is treating the IPv4
 addresses as strings.
 
 If we could convert the IPv4 addresses to a zero padded format like this:
@@ -56,13 +58,13 @@ then they should sort correctly as:
 
 This is where the `ipv4zeropad.py` CGI script comes in.
 
-## How to use the `ipv4zeropad.py`
+## How to use the `ipv4zeropad.py` CGI script
 
 Open a web browser and point it to the web server you have installed the
-`ipv4zeropad.py` CGI script on (see below for hints on how to do this).
+`ipv4zeropad.py` CGI script (see below for hints on how to do this).
 
-If you do not want to go to the trouble of installing the script just
-yet then you can use my web server at this URL:
+If you do not want to go to the trouble of installing the script
+then you can use my web server at this URL:
 
 http://cranstonhub.com/cgi-bin/ipv4zeropad.py
 
@@ -78,7 +80,7 @@ as 010.234.001.070).
 Select and copy the zero padded IPv4 addresses from the right hand side
 text input box and paste them back into your application.
 
-Finally use the sort function on your application to sort on the zero
+Finally use the sort function in your application to sort on the zero
 padded IPv4 addresses.
 
 ## Installing the `ipv4zeropad.py` CGI script
@@ -141,7 +143,7 @@ section and that under this section is the line:
 ".py" => "/usr/bin/python3",
 ```
 
-Finally restart the `lighttpd` web server to any changes to
+Finally restart the `lighttpd` web server so any changes to
 the `lighttpd.conf` file are applied:
 
 ```
