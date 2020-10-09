@@ -1,6 +1,6 @@
 # A web based CGI script to zero pad IPv4 addresses to make them easier to sort
 
-## For the impatient --> Demo video
+## For the really impatient --> Demo video
 
 For a demonstration look at this:
 
