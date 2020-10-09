@@ -1,6 +1,6 @@
 #! /usr/bin/python3
 #
-# @(!--#) @(#) ipv4zeropad.py, version 006, 08-august-2019
+# @(!--#) @(#) ipv4zeropad.py, version 007, 08-october-2020
 #
 # pad IPv4 addresses with leading zeroes so they sort correctly
 #
@@ -254,6 +254,31 @@ def validipv4(ipv4address):
     if '..' in ipv4address:
         return False
 
+    octets = ipv4address.split('.')
+
+    if len(octets) != 4:
+        return False
+
+    for octet in octets:
+        l = len(octet)
+
+        if l < 1:
+            return False
+
+        if l > 3:
+            return False
+
+        if l >= 2:
+            if octet[0] == '0':
+                return False
+
+        for c in octet:
+            if not c.isdigit():
+                return False
+
+        if int(octet) > 256:
+            return False
+
     return True
 
 #################################################################
@@ -345,25 +370,16 @@ def main():
             if validipv4(line):
                 print(padipv4(line))
             else:
-                print(line)
+                if line == '':
+                    print('')
+                else:
+                    print('*** {} ***'.format(html.escape(line)))
 
     print('</textarea>')
 
     print('</form>')
 
     print('<hr>')
-
-    if zeropad != '':
-        if (2 + 2) == 5:
-            print('<pre>')
-            print('-- len -------')
-            print(len(ipv4addresses))
-            print('-- type ------')
-            print(type(ipv4addresses))
-            print('--string -----')
-            print(html.escape(ipv4addresses))
-            print('--------------')
-            print('</pre>')
 
     print('</body>')
 
